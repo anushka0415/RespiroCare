@@ -14,13 +14,13 @@ from keras.models import load_model, model_from_json
 # "Pneumonia":4
 # "Bronchiolitis":5
 
-json_file = open(r'C:\Users\Asus\Desktop\Breath\Respiratory-diseases-recognition-through-respiratory-sound-with-the-help-of-deep-neural-network/model.json', 'r')
+json_file = open(r'C:\Users\Asus\Desktop\Breath\Respiratory-diseases-recognition-through-respiratory-sound-with-the-help-of-deep-neural-network\model.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 
 keras.backend.clear_session()
 model = model_from_json(loaded_model_json)
-model.load_weights(r"C:\Users\Asus\Desktop\Breath\Respiratory-diseases-recognition-through-respiratory-sound-with-the-help-of-deep-neural-network/model.h5")
+model.load_weights(r"C:\Users\Asus\Desktop\Breath\Respiratory-diseases-recognition-through-respiratory-sound-with-the-help-of-deep-neural-network\model.h5")
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 app = Flask(__name__)
